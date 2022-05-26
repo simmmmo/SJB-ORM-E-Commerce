@@ -30,7 +30,7 @@ SO THAT my company can compete with other e-commerce companies
 
 ![exampleOfPOSTPUTDELETE](./assets/POSTPUTDELETE.gif)
 
-More in the Wwalkthrough videos
+More demo's in the [Walkthrough videos](#walkthrough-video-links)
 
 ## Installation
 
