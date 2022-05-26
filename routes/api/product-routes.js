@@ -15,19 +15,16 @@ router.get('/', async (req, res) => {
   }
 });
 
-
 // GET a single product by its `id` with associated Category and Tag data
 router.get('/:id', async (req, res) => {
   try {
     const productData = await Product.findByPk(req.params.id, {
       include: [{ model: Category }, { model: Tag }]
     });
-
     if (!productData) {
       res.status(404).json({ message: 'No Product found with this id!' });
       return;
     }
-
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
@@ -35,9 +32,7 @@ router.get('/:id', async (req, res) => {
 });
 
 
-
-
-// create new product
+// CREATE a new product
 router.post('/', (req, res) => {
   /* req.body should look like this...
     {
@@ -69,7 +64,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// update product
+// UPDATE a product
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -120,12 +115,10 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id
       }
     });
-
     if (!productData) {
       res.status(404).json({ message: 'No Product found with this id!' });
       return;
     }
-
     res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);

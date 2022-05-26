@@ -3,12 +3,7 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 // The `/api/tags` endpoint
 
-// router.get('/', (req, res) => {
-//   // find all tags
-//   // be sure to include its associated Product data
-// });
-
-// GET all tags include its associated Product data
+// GET all tags including associated Product data
 router.get('/', async (req, res) => {
   try {
     const tagData = await Tag.findAll({ include: Product });
@@ -18,35 +13,21 @@ router.get('/', async (req, res) => {
   }
 });
 
-
-// router.get('/:id', (req, res) => {
-//   // find a single tag by its `id`
-//   // be sure to include its associated Product data
-// });
-
-// GET a single tag by id
+// GET a single tag by id with  associated Product data
 router.get('/:id', async (req, res) => {
   try {
     const tagData = await Tag.findByPk(req.params.id, {
       include: [{ model: Product }]
     });
-
     if (!tagData) {
       res.status(404).json({ message: 'No Tag found with this id!' });
       return;
     }
-
     res.status(200).json(tagData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
-
-
-// router.post('/', (req, res) => {
-//   // create a new tag
-// });
 
 // CREATE a new tag
 router.post('/', async (req, res) => {
@@ -58,17 +39,12 @@ router.post('/', async (req, res) => {
   }
 });
 
-
-// router.put('/:id', (req, res) => {
-//   // update a tag's name by its `id` value
-// });
-
-// UPDATE a Tag by its `id` value
+// UPDATE a Tag name by its `id` value
 router.put('/:id', async (req, res) => {
   try {
     const tagData = await Tag.update(req.body, {
       where: {
-        id: req.params.id,
+        id: req.params.id
       },
     })
     if (!tagData) {
@@ -81,13 +57,6 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-
-
-// router.delete('/:id', (req, res) => {
-//   // delete on tag by its `id` value
-// });
-
-
 // DELETE a tag by its `id` value
 router.delete('/:id', async (req, res) => {
   try {
@@ -96,12 +65,10 @@ router.delete('/:id', async (req, res) => {
         id: req.params.id
       }
     });
-
     if (!tagData) {
-      res.status(404).json({ tagData: 'No Category found with this id!' });
+      res.status(404).json({ message: 'No Tag found with this id!' });
       return;
     }
-
     res.status(200).json(tagData);
   } catch (err) {
     res.status(500).json(err);
