@@ -16,19 +16,19 @@ SO THAT my company can compete with other e-commerce companies
 
 ###### Create Database, Seed data and start the application’s server
 
-[exampleOfCreateDBSseedDateStartServer](./assets/CreateDBSseedDateStartServer.gif)
+![exampleOfCreateDBSseedDateStartServer](./assets/CreateDBSseedDateStartServer.gif)
 
 ###### Example of GET routes for all categories, all products, and all tags
 
-[exampleOfGETreponseforAll](./assets/GETreponseforAll.gif)
+![exampleOfGETreponseforAll](./assets/GETreponseforAll.gif)
 
 ###### Example of GET routes for a single category/product and a single tag
 
-[exampleOfGETreponseforSingle](./assets/GETreponseforSingle.gif)
+![exampleOfGETreponseforSingle](./assets/GETreponseforSingle.gif)
 
 ###### Example of POST, PUT, and DELETE routes - Product
 
-[exampleOfPOSTPUTDELETE](./assets/POSTPUTDELETE.gif)
+![exampleOfPOSTPUTDELETE](./assets/POSTPUTDELETE.gif)
 
 More in the Wwalkthrough videos
 
